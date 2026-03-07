@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why I Built Oracle — Oracle Blog</title>
+  <meta name="description" content="Every journaling app asks you to pour out your soul — then stores it on someone else's server. I built Oracle because I needed a journal that was actually safe.">
+  <meta property="og:title" content="Why I Built Oracle">
+  <meta property="og:description" content="Every journaling app asks you to pour out your soul — then stores it on someone else's server. I built Oracle because I needed a journal that was actually safe.">
+  <meta property="og:type" content="article">
+  <link rel="icon" href="/assets/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/legal.css">
+  <link rel="stylesheet" href="/blog.css">
+</head>
+<body>
+  <canvas id="particles"></canvas>
+
+  <nav class="nav scrolled">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">
+        <img src="/assets/logo.png" alt="Oracle" class="nav-logo">
+        <span class="nav-name">Oracle</span>
+      </a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/blog/" class="nav-active">Blog</a>
+        <a href="/resources.html">Resources</a>
+        <a href="https://app.oraclethejournal.com" class="btn btn-sm" target="_blank" rel="noopener">Open App</a>
+      </div>
+      <button class="nav-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu">
+    <a href="/">Home</a>
+    <a href="/blog/">Blog</a>
+    <a href="/resources.html">Resources</a>
+    <a href="https://app.oraclethejournal.com" class="btn" target="_blank" rel="noopener">Open App</a>
+  </div>
+
+  <main class="legal-page">
+    <article class="blog-article">
+
+      <div class="blog-article-header">
+        <a href="/blog/" class="blog-back-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          All Posts
+        </a>
+        <span class="blog-card-category">Company</span>
+        <h1>Why I Built Oracle</h1>
+        <div class="blog-article-meta">
+          <time>March 6, 2026</time>
+          <span class="meta-sep">&middot;</span>
+          <span>6 min read</span>
+        </div>
+      </div>
+
+      <div class="blog-affiliate-notice">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        This article may contain affiliate links. If you purchase through them, we earn a small commission at no extra cost to you. <a href="/resources.html">Learn more.</a>
+      </div>
+
+      <div class="blog-article-body">
+        <p>I&#39;ve been journaling since I was 17. Through breakups, career pivots, therapy sessions, spiritual awakenings, and dark nights of the soul — my journal has been the one constant. The place where I could be completely, devastatingly honest.</p>
+<p>But here&#39;s the thing that always nagged me: <strong>every digital journal I used was storing my most intimate thoughts on someone else&#39;s server.</strong></p>
+<p>Think about that for a second. The entries where you confess what you really feel about your family. The ones where you process trauma. The late-night spirals where you write things you&#39;d never say out loud. All of it, sitting in a database controlled by a company whose business model you don&#39;t fully understand.</p>
+<p>That&#39;s not privacy. That&#39;s a liability.</p>
+<h2>The Breaking Point</h2>
+<p>The moment Oracle became inevitable was when I read a privacy policy for a popular journaling app. Buried deep in the legal language was a clause that essentially said: <em>&quot;We may use your content to improve our services and train our models.&quot;</em></p>
+<p>They were training AI on people&#39;s journal entries.</p>
+<p>I closed my laptop, stared at the wall for a while, and thought: <em>There has to be another way.</em></p>
+<h2>The Non-Negotiable</h2>
+<p>I set one rule before writing a single line of code: <strong>raw journal entries must never leave the user&#39;s device.</strong> Not encrypted-then-uploaded. Not anonymized-then-stored. <em>Never. Leave. The device.</em></p>
+<p>This constraint shaped everything. It meant:</p>
+<ul>
+<li>The AI had to run locally, not in the cloud</li>
+<li>Encryption had to happen before storage, with a key only the user controls</li>
+<li>The backend could only ever see anonymized, noise-injected data — if anything at all</li>
+</ul>
+<p>It turns out that when you make privacy the <em>architecture</em> instead of a <em>feature</em>, you end up building something fundamentally different from what exists.</p>
+<h2>Why Local AI Changes Everything</h2>
+<p>Most AI journaling apps work like this: you write an entry, it gets sent to OpenAI or Google, their servers process it, and a response comes back. Your most private thoughts traverse the internet, land on third-party infrastructure, and get processed by models you can&#39;t audit.</p>
+<p>Oracle works differently. The AI — a fine-tuned Llama 3.2 model — runs on your machine through Ollama. Your entry is read in local memory, analyzed in local memory, and the insight is generated in local memory. Nothing leaves. There&#39;s no API call. No cloud. Just you and your CPU.</p>
+<p>The AI is trained in Cognitive Behavioral Therapy (CBT) and Jungian archetypal psychology. It doesn&#39;t give you medical advice. Instead, it asks probing questions to help you uncover patterns you might not see yourself. It&#39;s like having a thoughtful friend who&#39;s read a lot of Jung and knows when to ask <em>&quot;What do you think that dream was really about?&quot;</em></p>
+<h2>The Collective Without the Compromise</h2>
+<p>The most ambitious part of Oracle is what we call the &quot;State of the Soul&quot; — a collective map of human emotion and behavior. The question was: <em>Can we learn from millions of people without knowing anything about any individual?</em></p>
+<p>The answer is yes, through three layers of mathematical privacy:</p>
+<ol>
+<li><strong>Generalization</strong> strips away specifics (your age becomes a range, your city becomes a country)</li>
+<li><strong>Differential Privacy</strong> flips a mathematical coin to inject noise — so even we can&#39;t tell if a data point is real or a decoy</li>
+<li><strong>K-Anonymity</strong> ensures no data point is ever stored unless at least 5 people share that category</li>
+</ol>
+<p>The result is a &quot;Multidimensional Wellness Compass&quot; that can map trends across the collective human experience — <em>without ever identifying a single person.</em></p>
+<h2>What Oracle Is Really About</h2>
+<p>Oracle isn&#39;t a product built to capture a market. It&#39;s a journal built because I needed one that respected the weight of what I was writing.</p>
+<p>When you sit down to write about your shadow, your fears, your grief — you deserve to know that those words exist for you and you alone. Not for an algorithm. Not for an ad targeting system. Not for a model training pipeline.</p>
+<p>You deserve a sanctuary.</p>
+<p>That&#39;s what Oracle is.</p>
+<hr>
+<p><em>If any of this resonates, <a href="https://app.oraclethejournal.com">Oracle is free to try</a>. No credit card. No data collection. Just you and your thoughts, cryptographically sealed.</em></p>
+
+      </div>
+
+      <div class="blog-newsletter">
+        <h3>Subscribe for weekly insights from the unconscious.</h3>
+        <p>Dream analysis, shadow work prompts, and archetype deep-dives — delivered to your inbox.</p>
+        <form class="blog-newsletter-form" onsubmit="event.preventDefault(); this.querySelector('.blog-newsletter-btn').textContent = 'Coming Soon!'; this.querySelector('.blog-newsletter-btn').disabled = true;">
+          <input type="email" placeholder="Your email address" class="blog-newsletter-input" required>
+          <button type="submit" class="btn btn-primary blog-newsletter-btn">Subscribe</button>
+        </form>
+        <p class="blog-newsletter-note">No spam. Unsubscribe anytime. We don't track you (obviously).</p>
+      </div>
+
+      
+
+      <div class="blog-cta-box">
+        <img src="/assets/logo.png" alt="" class="blog-cta-logo" aria-hidden="true">
+        <h3>Ready to start your inner work?</h3>
+        <p>Oracle combines CBT, Jungian archetypes, and local AI into a private journal that never leaves your device.</p>
+        <a href="https://app.oraclethejournal.com" class="btn btn-primary" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Get Started with Oracle
+        </a>
+      </div>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="section-container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 Oracle The Journal. All rights reserved.</p>
+        <p class="footer-privacy-note">We collect zero personal data. <a href="/encryption.html">Verify our claims.</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>

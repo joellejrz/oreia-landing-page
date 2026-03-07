@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Oracle The Journal</title>
+  <meta name="description" content="Insights on shadow work, dream interpretation, Jungian psychology, and building a private AI journal. By Oracle.">
+  <link rel="icon" href="/assets/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/blog.css">
+</head>
+<body>
+  <canvas id="particles"></canvas>
+
+  <nav class="nav scrolled">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">
+        <img src="/assets/logo.png" alt="Oracle" class="nav-logo">
+        <span class="nav-name">Oracle</span>
+      </a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/blog/" class="nav-active">Blog</a>
+        <a href="/resources.html">Resources</a>
+        <a href="https://app.oraclethejournal.com" class="btn btn-sm" target="_blank" rel="noopener">Open App</a>
+      </div>
+      <button class="nav-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu">
+    <a href="/">Home</a>
+    <a href="/blog/">Blog</a>
+    <a href="/resources.html">Resources</a>
+    <a href="https://app.oraclethejournal.com" class="btn" target="_blank" rel="noopener">Open App</a>
+  </div>
+
+  <main class="blog-page">
+    <div class="blog-container">
+
+      <div class="blog-hero">
+        <span class="section-tag">From the Vault</span>
+        <h1>A Blog by <span class="gradient-text">Oracle.</span></h1>
+        <p class="blog-hero-sub">Shadow work, dream interpretation, Jungian psychology, and the architecture of privacy. Insights from the unconscious.</p>
+      </div>
+
+      <div class="blog-filters">
+        <div class="blog-filter-pills">
+          <button class="blog-filter-pill active" data-category="All">All</button>
+          <button class="blog-filter-pill" data-category="Company">Company</button>
+          <button class="blog-filter-pill" data-category="Deep Theory">Deep Theory</button>
+          <button class="blog-filter-pill" data-category="Dream Work">Dream Work</button>
+        </div>
+      </div>
+
+      <div class="blog-grid">
+        
+        <a href="/blog/why-i-built-oracle/" class="blog-card" data-category="Company" data-tilt data-tilt-intensity="5">
+          <div class="blog-card-inner">
+            <span class="blog-card-category">Company</span>
+            <h3>Why I Built Oracle</h3>
+            <p>Every journaling app asks you to pour out your soul — then stores it on someone else's server. I built Oracle because I needed a journal that was actually safe.</p>
+            <div class="blog-card-footer">
+              <time>March 6, 2026</time>
+              <span>6 min read</span>
+            </div>
+          </div>
+        </a>
+        <a href="/blog/shadow-work-for-beginners/" class="blog-card" data-category="Deep Theory" data-tilt data-tilt-intensity="5">
+          <div class="blog-card-inner">
+            <span class="blog-card-category">Deep Theory</span>
+            <h3>Shadow Work for Beginners: A Practical Guide</h3>
+            <p>Carl Jung believed the shadow holds the key to wholeness. Here's how to start meeting the parts of yourself you've been avoiding — safely and at your own pace.</p>
+            <div class="blog-card-footer">
+              <time>March 4, 2026</time>
+              <span>10 min read</span>
+            </div>
+          </div>
+        </a>
+        <a href="/blog/dreams-processing-stress/" class="blog-card" data-category="Dream Work" data-tilt data-tilt-intensity="5">
+          <div class="blog-card-inner">
+            <span class="blog-card-category">Dream Work</span>
+            <h3>3 Signs Your Dreams Are Processing Stress</h3>
+            <p>Your unconscious mind doesn't take a day off. Here's how to tell when your dreams are trying to process the stress your waking mind refuses to acknowledge.</p>
+            <div class="blog-card-footer">
+              <time>March 2, 2026</time>
+              <span>7 min read</span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="blog-index-newsletter">
+        <h3>Get insights delivered.</h3>
+        <p>Weekly essays on the unconscious, dream patterns, and building a life of self-awareness.</p>
+        <form class="blog-newsletter-form" onsubmit="event.preventDefault(); this.querySelector('.blog-newsletter-btn').textContent = 'Coming Soon!'; this.querySelector('.blog-newsletter-btn').disabled = true;">
+          <input type="email" placeholder="Your email address" class="blog-newsletter-input" required>
+          <button type="submit" class="btn btn-primary blog-newsletter-btn">Subscribe</button>
+        </form>
+        <p class="blog-newsletter-note">No spam. Unsubscribe anytime. We don't track you (obviously).</p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="section-container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 Oracle The Journal. All rights reserved.</p>
+        <p class="footer-privacy-note">We collect zero personal data. <a href="/encryption.html">Verify our claims.</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+  <script>
+    document.querySelectorAll('.blog-filter-pill').forEach(pill => {
+      pill.addEventListener('click', () => {
+        document.querySelectorAll('.blog-filter-pill').forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        const cat = pill.dataset.category;
+        document.querySelectorAll('.blog-card').forEach(card => {
+          card.style.display = (cat === 'All' || card.dataset.category === cat) ? '' : 'none';
+        });
+      });
+    });
+  </script>
+</body>
+</html>
