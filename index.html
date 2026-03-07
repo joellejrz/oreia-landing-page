@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oracle — Your Private AI Journal</title>
+  <meta name="description" content="The first AI journal that actually respects your privacy. Local-first, end-to-end encrypted, and completely anonymous. Your thoughts never leave your device.">
+  <link rel="icon" href="assets/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Ambient background particles -->
+  <canvas id="particles"></canvas>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-brand">
+        <img src="assets/logo.png" alt="Oracle" class="nav-logo">
+        <span class="nav-name">Oracle</span>
+      </a>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#collective">The Collective</a>
+        <a href="https://oraclethejournal.com" class="btn btn-sm" target="_blank" rel="noopener">Open App</a>
+      </div>
+      <button class="nav-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <a href="#features">Features</a>
+    <a href="#how-it-works">How It Works</a>
+    <a href="#collective">The Collective</a>
+    <a href="https://oraclethejournal.com" class="btn" target="_blank" rel="noopener">Open App</a>
+  </div>
+
+  <!-- =============== HERO =============== -->
+  <section class="hero" data-parallax-section>
+    <div class="hero-content">
+      <div class="hero-badge" data-reveal="fade-down" data-delay="0">
+        <span class="badge-dot"></span>
+        100% Local &middot; Zero Data Collection
+      </div>
+      <h1 class="hero-title" data-reveal="fade-up" data-delay="100">
+        Your mind,<br>
+        <span class="gradient-text" data-text-scramble>cryptographically sealed.</span>
+      </h1>
+      <p class="hero-sub" data-reveal="fade-up" data-delay="200">
+        The first AI journal that actually respects your privacy.
+        Local-first, end-to-end encrypted, and completely anonymous.
+        <strong>Your thoughts never leave your device.</strong>
+      </p>
+      <div class="hero-actions" data-reveal="fade-up" data-delay="300">
+        <a href="https://oraclethejournal.com" class="btn btn-primary" data-magnetic target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Initialize Vault
+        </a>
+        <a href="#how-it-works" class="btn btn-ghost" data-magnetic>
+          See How It Works
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+        </a>
+      </div>
+      <div class="hero-trust" data-reveal="fade-up" data-delay="400">
+        <div class="trust-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+          AES-256 Encrypted
+        </div>
+        <div class="trust-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+          Runs Offline
+        </div>
+        <div class="trust-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+          Open Source
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual" data-parallax="0.15">
+      <div class="orb-container" data-tilt data-tilt-intensity="20">
+        <div class="orb"></div>
+        <div class="orb-ring"></div>
+        <div class="orb-ring orb-ring-2"></div>
+        <img src="assets/logo.png" alt="" class="hero-logo-float" aria-hidden="true">
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== VALUE PROPS =============== -->
+  <section class="values" id="features">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">Why Oracle</span>
+        <h2>Privacy isn't a feature.<br><span class="gradient-text">It's the architecture.</span></h2>
+      </div>
+      <div class="values-grid" data-stagger-parent>
+        <div class="value-card" data-reveal="scale" data-delay="0" data-tilt data-tilt-intensity="8">
+          <div class="value-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><circle cx="12" cy="16" r="1"/></svg>
+          </div>
+          <h3>Absolutely Private</h3>
+          <p>We literally can't read your entries if we tried. Everything is secured with AES-256 encryption using a Master Password only you know. Not even we have the keys.</p>
+        </div>
+        <div class="value-card" data-reveal="scale" data-delay="120" data-tilt data-tilt-intensity="8">
+          <div class="value-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a4 4 0 0 0-4 4v2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2h-2V6a4 4 0 0 0-4-4z"/><circle cx="12" cy="15" r="2"/><path d="M12 17v2"/></svg>
+          </div>
+          <h3>Local AI — Your Higher Self</h3>
+          <p>Talk to your subconscious without sending your secrets to the cloud. Our AI runs entirely on your machine using Llama 3.2, trained in CBT and archetypal psychology.</p>
+        </div>
+        <div class="value-card" data-reveal="scale" data-delay="240" data-tilt data-tilt-intensity="8">
+          <div class="value-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+          </div>
+          <h3>Zero-Knowledge Sync</h3>
+          <p>Sync across devices securely. Only encrypted gibberish ever touches our servers. Your raw data stays locked in a vault on your device — always.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== APP SHOWCASE =============== -->
+  <section class="showcase" id="how-it-works">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">Inside the Vault</span>
+        <h2>A sanctuary for<br><span class="gradient-text">radical honesty.</span></h2>
+        <p class="section-desc">Every feature designed around one principle: your privacy is non-negotiable.</p>
+      </div>
+
+      <div class="showcase-grid">
+        <div class="showcase-item" data-reveal="slide-right">
+          <div class="showcase-screen" data-tilt data-tilt-intensity="5">
+            <img src="assets/dashboard.png" alt="Oracle Dashboard showing the secure local vault and privacy status" loading="lazy">
+            <div class="screen-glow"></div>
+          </div>
+          <div class="showcase-info" data-reveal="fade-up" data-delay="200">
+            <h3>The Local Vault</h3>
+            <p>Your encrypted command center. See your entry count, privacy status, and recent activity — all stored on-device with AES-256-GCM encryption. The dashboard confirms what matters: 100% Local.</p>
+          </div>
+        </div>
+
+        <div class="showcase-item showcase-item-reverse" data-reveal="slide-left">
+          <div class="showcase-screen" data-tilt data-tilt-intensity="5">
+            <img src="assets/login.png" alt="Oracle login screen with secure authentication" loading="lazy">
+            <div class="screen-glow"></div>
+          </div>
+          <div class="showcase-info" data-reveal="fade-up" data-delay="200">
+            <h3>Your Keys, Your Data</h3>
+            <p>Authentication that puts you in control. Your Master Password derives the encryption key locally — it never touches a server. Sign in with Google for convenience, but your vault remains sealed to everyone but you.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature Cards -->
+      <div class="feature-cards" data-stagger-parent>
+        <div class="feature-card" data-reveal="scale" data-delay="0" data-tilt data-tilt-intensity="6">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <h4>Higher Self Chat</h4>
+          <p>A private AI therapist using Cognitive Behavioral Therapy and Jungian archetypes. Analyzes your entries to uncover unconscious patterns — entirely on your device.</p>
+        </div>
+        <div class="feature-card" data-reveal="scale" data-delay="100" data-tilt data-tilt-intensity="6">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21.64 3.64a1 1 0 0 0-.85-.27l-5.18.74a1 1 0 0 0-.67.43L12 9l-2.94-4.46a1 1 0 0 0-.67-.43L3.21 3.37a1 1 0 0 0-1.06 1.31l2.46 6.22a1 1 0 0 0 .48.52L12 15l6.91-3.58a1 1 0 0 0 .48-.52l2.46-6.22a1 1 0 0 0-.21-1.04z"/><path d="M12 15v7"/><path d="M8 19h8"/></svg>
+          </div>
+          <h4>Dream Diary</h4>
+          <p>Capture dreams with clarity and emotional tone sliders. Track recurring symbols, decode archetypal messages, and watch your dream patterns emerge over time.</p>
+        </div>
+        <div class="feature-card" data-reveal="scale" data-delay="200" data-tilt data-tilt-intensity="6">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+          </div>
+          <h4>Archetype Profile</h4>
+          <p>Discover your behavioral phenotype. The AI maps your communication style, emotional patterns, and archetypal tendencies using chronobiology and astrological context.</p>
+        </div>
+        <div class="feature-card" data-reveal="scale" data-delay="300" data-tilt data-tilt-intensity="6">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <h4>State of the Soul</h4>
+          <p>Contribute anonymously to the collective consciousness. See how your emotional patterns align with the world — without revealing your identity. The Rule of 5 ensures you're never singled out.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== HOW PRIVACY WORKS =============== -->
+  <section class="privacy-flow">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">The Architecture</span>
+        <h2>Privacy by math,<br><span class="gradient-text">not by promise.</span></h2>
+        <p class="section-desc">Three layers of mathematical privacy guarantee your anonymity before any data leaves your device.</p>
+      </div>
+
+      <div class="flow-steps">
+        <div class="flow-step" data-reveal="slide-right" data-delay="0">
+          <div class="flow-number">01</div>
+          <div class="flow-content">
+            <h3>Generalization</h3>
+            <p>Specific data is transformed into broad categories locally. Your exact age becomes "30–35." Your city becomes a country. Details dissolve while patterns remain.</p>
+          </div>
+        </div>
+        <div class="flow-connector"></div>
+        <div class="flow-step" data-reveal="slide-right" data-delay="150">
+          <div class="flow-number">02</div>
+          <div class="flow-content">
+            <h3>Differential Privacy</h3>
+            <p>A mathematical "coin flip" injects noise into your data. Your true traits are mixed with randomized decoys, granting plausible deniability while keeping aggregate statistics accurate.</p>
+          </div>
+        </div>
+        <div class="flow-connector"></div>
+        <div class="flow-step" data-reveal="slide-right" data-delay="300">
+          <div class="flow-number">03</div>
+          <div class="flow-content">
+            <h3>K-Anonymity — The Rule of 5</h3>
+            <p>No data point is ever examined if fewer than 5 people share that category. If your profile is too unique, the AI blurs it locally. You are never a data point of one.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== COLLECTIVE =============== -->
+  <section class="collective" id="collective">
+    <div class="section-container">
+      <div class="collective-inner">
+        <div class="collective-visual">
+          <div class="constellation">
+            <div class="star" style="--x: 20%; --y: 30%; --delay: 0s; --size: 3px"></div>
+            <div class="star" style="--x: 80%; --y: 20%; --delay: 0.5s; --size: 2px"></div>
+            <div class="star" style="--x: 50%; --y: 60%; --delay: 1s; --size: 4px"></div>
+            <div class="star" style="--x: 30%; --y: 80%; --delay: 1.5s; --size: 2px"></div>
+            <div class="star" style="--x: 70%; --y: 70%; --delay: 0.3s; --size: 3px"></div>
+            <div class="star" style="--x: 15%; --y: 55%; --delay: 0.8s; --size: 2px"></div>
+            <div class="star" style="--x: 85%; --y: 45%; --delay: 1.2s; --size: 3px"></div>
+            <div class="star" style="--x: 45%; --y: 15%; --delay: 0.6s; --size: 2px"></div>
+            <div class="star" style="--x: 60%; --y: 85%; --delay: 1.8s; --size: 3px"></div>
+            <div class="star" style="--x: 40%; --y: 40%; --delay: 0.2s; --size: 4px"></div>
+          </div>
+        </div>
+        <div class="collective-text">
+          <span class="section-tag">The Anonymous Collective</span>
+          <h2>The State of the<br><span class="gradient-text">Human Soul.</span></h2>
+          <p>Contribute to a "Multidimensional Wellness Compass" — a living map of human emotion and behavior — without revealing a single thing about yourself.</p>
+          <p>Through Zero-Knowledge Aggregation, Oracle builds macro-insights about the collective human experience. See how the world feels, what archetypes are rising, and where the collective consciousness is heading.</p>
+          <p class="collective-highlight">Your identity stays sealed. The truth emerges.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== SOCIAL PROOF / MANIFESTO =============== -->
+  <section class="manifesto">
+    <div class="section-container">
+      <div class="manifesto-inner">
+        <blockquote class="manifesto-quote" data-reveal="fade-up">
+          <p>&ldquo;Until you make the unconscious conscious, it will direct your life and you will call it fate.&rdquo;</p>
+          <cite>— Carl Jung</cite>
+        </blockquote>
+        <div class="manifesto-divider"></div>
+        <div class="manifesto-text" data-reveal="fade-up" data-delay="200">
+          <p>In an era of data harvesting, Oracle Journal is a sanctuary. A place where you can be <em>radically honest</em> because you are <em>radically safe</em>.</p>
+          <p>No ads. No analytics. No tracking pixels. No data brokers. Just you, your thoughts, and an AI that exists solely on your machine — loyal only to you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== TECH STACK =============== -->
+  <section class="tech">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">Under the Hood</span>
+        <h2>Built on trust,<br><span class="gradient-text">verified by code.</span></h2>
+      </div>
+      <div class="tech-grid" data-stagger-parent>
+        <div class="tech-item" data-reveal="scale" data-delay="0">
+          <div class="tech-label">AI Engine</div>
+          <div class="tech-value">Llama 3.2 (3B)</div>
+          <div class="tech-desc">Runs fully offline on your device</div>
+        </div>
+        <div class="tech-item" data-reveal="scale" data-delay="80">
+          <div class="tech-label">Encryption</div>
+          <div class="tech-value">AES-256-GCM</div>
+          <div class="tech-desc">Military-grade, key never transmitted</div>
+        </div>
+        <div class="tech-item" data-reveal="scale" data-delay="160">
+          <div class="tech-label">Local Storage</div>
+          <div class="tech-value">IndexedDB</div>
+          <div class="tech-desc">All data stays on your hardware</div>
+        </div>
+        <div class="tech-item" data-reveal="scale" data-delay="240">
+          <div class="tech-label">Backend</div>
+          <div class="tech-value">Cloudflare Edge</div>
+          <div class="tech-desc">IPs auto-scrubbed, no traditional servers</div>
+        </div>
+        <div class="tech-item" data-reveal="scale" data-delay="320">
+          <div class="tech-label">Privacy Layer</div>
+          <div class="tech-value">Differential Privacy</div>
+          <div class="tech-desc">Mathematical plausible deniability</div>
+        </div>
+        <div class="tech-item" data-reveal="scale" data-delay="400">
+          <div class="tech-label">Source Code</div>
+          <div class="tech-value">Open Source</div>
+          <div class="tech-desc">Audit it yourself on GitHub</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== FINAL CTA =============== -->
+  <section class="final-cta">
+    <div class="section-container">
+      <div class="cta-inner" data-reveal="scale">
+        <img src="assets/logo.png" alt="" class="cta-logo" aria-hidden="true">
+        <h2>Unlock your unconscious.</h2>
+        <p>Your private AI journal awaits. No credit card. No data collection. Just you.</p>
+        <a href="https://oraclethejournal.com" class="btn btn-primary btn-lg" data-magnetic target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Create Your Vault
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== FOOTER =============== -->
+  <footer class="footer">
+    <div class="section-container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="assets/logo.png" alt="Oracle" class="footer-logo">
+          <span>Oracle</span>
+          <p class="footer-tagline">Your private AI journal</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h5>Product</h5>
+            <a href="#features">Features</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#collective">The Collective</a>
+          </div>
+          <div class="footer-col">
+            <h5>Trust</h5>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">How Encryption Works</a>
+          </div>
+          <div class="footer-col">
+            <h5>Community</h5>
+            <a href="https://github.com/joellejrz/oracle-journal" target="_blank" rel="noopener">GitHub</a>
+            <a href="#">Discord</a>
+            <a href="#">Blog</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Oracle The Journal. All rights reserved.</p>
+        <p class="footer-privacy-note">We collect zero personal data. <a href="#">Verify our claims.</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
