@@ -1,0 +1,13 @@
+{
+  "name": "oracle-landing-page",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Landing page and blog for Oracle — Your Private AI Journal",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "marked": "^15.0.7"
+  }
+}
