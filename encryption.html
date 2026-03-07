@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How Encryption Works — Oracle The Journal</title>
+  <meta name="description" content="A technical deep-dive into how Oracle encrypts your data with AES-256-GCM, processes AI locally, and anonymizes collective data.">
+  <link rel="icon" href="assets/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="legal.css">
+</head>
+<body>
+  <canvas id="particles"></canvas>
+
+  <nav class="nav scrolled">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">
+        <img src="assets/logo.png" alt="Oracle" class="nav-logo">
+        <span class="nav-name">Oracle</span>
+      </a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="https://app.oraclethejournal.com" class="btn btn-sm" target="_blank" rel="noopener">Open App</a>
+      </div>
+      <button class="nav-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu">
+    <a href="/">Home</a>
+    <a href="https://app.oraclethejournal.com" class="btn" target="_blank" rel="noopener">Open App</a>
+  </div>
+
+  <main class="legal-page">
+    <div class="legal-container">
+      <h1><span class="gradient-text">How Encryption Works</span></h1>
+      <p class="legal-meta">A technical deep-dive for the skeptics, the engineers, and anyone who wants proof.</p>
+
+      <div class="legal-highlight">
+        <p><strong>TL;DR:</strong> Your journal entries are encrypted with AES-256-GCM using a key derived from your Master Password. The key never leaves your device. AI runs locally via Llama 3.2. If you opt into the collective, three layers of mathematical anonymization protect your identity before anything is transmitted.</p>
+      </div>
+
+      <h2>The Data Flow</h2>
+      <p>Here's exactly what happens from the moment you type to the moment data (optionally) reaches our servers:</p>
+
+      <div class="encrypt-diagram">User types journal entry
+        │
+        ▼
+┌─────────────────────────────────────────┐
+│          YOUR DEVICE (Local)            │
+│                                         │
+│  1. Entry encrypted → AES-256-GCM      │
+│  2. Stored in IndexedDB (encrypted)     │
+│  3. Llama 3.2 reads plaintext in RAM    │
+│  4. AI generates insight (local only)   │
+│  5. Anonymizer generalizes metadata     │
+│  6. Differential Privacy adds noise     │
+│  7. K-Anonymity check (Rule of 5)       │
+│                                         │
+└────────────────┬────────────────────────┘
+                 │ (optional, anonymous payload only)
+                 ▼
+┌─────────────────────────────────────────┐
+│       CLOUDFLARE EDGE (Our servers)     │
+│                                         │
+│  • Receives anonymous archetype only    │
+│  • No raw text, no user ID, no IP       │
+│  • Stored in D1 (edge SQLite)           │
+│  • Aggregated for collective insights   │
+│                                         │
+└─────────────────────────────────────────┘</div>
+
+      <h2>Layer 1: Local Encryption</h2>
+      <p>Every journal entry is encrypted before it's saved — not after, not during sync, but immediately upon creation.</p>
+
+      <h3>The Algorithm: AES-256-GCM</h3>
+      <ul>
+        <li><strong>AES-256</strong> — Advanced Encryption Standard with a 256-bit key. Used by governments and military worldwide. Brute-forcing a 256-bit key would take longer than the age of the universe.</li>
+        <li><strong>GCM (Galois/Counter Mode)</strong> — provides both encryption and authentication. If even a single bit of ciphertext is tampered with, decryption fails. This prevents data corruption attacks.</li>
+      </ul>
+
+      <h3>Key Derivation</h3>
+      <p>Your encryption key is derived from your Master Password using a Key Derivation Function (KDF) on your device:</p>
+      <ul>
+        <li>The Master Password is never stored in plaintext</li>
+        <li>The derived key exists only in volatile memory during your session</li>
+        <li>The key is never transmitted to any server</li>
+        <li>Even if our servers were fully compromised, your entries remain encrypted gibberish</li>
+      </ul>
+
+      <div class="legal-highlight">
+        <p><strong>What this means:</strong> If you forget your Master Password, your data is gone forever. We cannot recover it. This is a feature, not a bug — it proves we don't have a backdoor.</p>
+      </div>
+
+      <h2>Layer 2: Local AI Processing</h2>
+      <p>The Higher Self AI doesn't phone home. Here's how it works:</p>
+
+      <div class="encrypt-step">
+        <span class="encrypt-step-num">01</span>
+        <div>
+          <p><strong>Engine:</strong> Ollama running Llama 3.2 (3B parameters), optimized for edge devices. The model runs entirely in local memory.</p>
+        </div>
+      </div>
+      <div class="encrypt-step">
+        <span class="encrypt-step-num">02</span>
+        <div>
+          <p><strong>Process:</strong> Your decrypted entry is passed to the local model in RAM. It never touches disk in plaintext, is never logged, and is never transmitted.</p>
+        </div>
+      </div>
+      <div class="encrypt-step">
+        <span class="encrypt-step-num">03</span>
+        <div>
+          <p><strong>Output:</strong> The AI generates insights, identifies patterns, and provides CBT-style reflections. All output stays local.</p>
+        </div>
+      </div>
+
+      <p>No data is sent to OpenAI, Google, Anthropic, or any third-party AI provider. The model runs on your CPU/GPU. Full stop.</p>
+
+      <h2>Layer 3: The Anonymization Pipeline</h2>
+      <p>If you opt in to the collective feature, your data passes through three mathematical privacy guarantees before anything leaves your device:</p>
+
+      <h3>Step 1: Generalization</h3>
+      <p>Specific identifying data is transformed into broad categories:</p>
+      <ul>
+        <li><code>Age: 31</code> → <code>Age Group: 30-35</code></li>
+        <li><code>City: Berlin</code> → <code>Region: Europe</code></li>
+        <li><code>Mood: devastated about breakup</code> → <code>State: Struggling</code></li>
+      </ul>
+      <p>Raw journal text is never included. Only generalized trait labels are produced.</p>
+
+      <h3>Step 2: Differential Privacy (The "Coin Flip")</h3>
+      <p>A Randomized Response algorithm introduces mathematical noise:</p>
+      <ol>
+        <li>The algorithm flips a virtual coin</li>
+        <li><strong>Heads:</strong> Your true generalized trait is used</li>
+        <li><strong>Tails:</strong> A random decoy trait is substituted</li>
+      </ol>
+      <p>This means any individual data point has <strong>plausible deniability</strong> — even we can't know if a specific entry is real or noise. But across thousands of users, the noise cancels out and aggregate statistics remain accurate.</p>
+
+      <h3>Step 3: K-Anonymity (The Rule of 5)</h3>
+      <p>Before any archetype record is committed to the database, the system checks: <strong>are there at least 5 other people who share this exact combination of traits?</strong></p>
+      <ul>
+        <li>If yes → the record is stored</li>
+        <li>If no → the record is further "blurred" locally until it fits a larger group</li>
+      </ul>
+      <p>This prevents anyone from being identified by a unique combination of attributes (e.g., the only 80-year-old male Scorpio in Iceland).</p>
+
+      <h2>Infrastructure: Why Cloudflare</h2>
+      <p>Our entire backend runs on Cloudflare's edge network. This matters because:</p>
+      <ul>
+        <li><strong>Workers don't see client IPs</strong> — by default, Cloudflare Workers don't expose the connecting client's IP address to worker code. No custom middleware needed.</li>
+        <li><strong>Edge compute</strong> — data is processed at the nearest Cloudflare data center, not routed to a central server</li>
+        <li><strong>No traditional servers</strong> — there is no VM, no EC2 instance, no container to compromise</li>
+        <li><strong>TLS 1.3</strong> — all data in transit is encrypted with modern TLS</li>
+      </ul>
+
+      <h2>What We Store on Our Servers</h2>
+      <p>The Cloudflare D1 database contains exactly two tables:</p>
+      <ul>
+        <li><strong>archetype_cohorts</strong> — generalized, noise-injected archetype records with no user identifiers</li>
+        <li><strong>cohort_aggregations</strong> — aggregated trend data computed from cohorts that pass the Rule of 5</li>
+      </ul>
+      <p>Zero raw text. Zero user IDs. Zero IP addresses. Zero encryption keys.</p>
+
+      <h2>Verify It Yourself</h2>
+      <p>Every claim on this page can be verified in our source code:</p>
+      <ul>
+        <li><a href="https://github.com/joellejrz/oracle-journal" target="_blank" rel="noopener">Full source code on GitHub</a></li>
+        <li>Encryption implementation: <code>/src/storage/aes-encryption.ts</code></li>
+        <li>Anonymization pipeline: <code>/src/anonymizer/</code></li>
+        <li>AI system prompt: <code>/src/ai-engine/prompts.ts</code></li>
+        <li>Backend Worker: <code>/collective-vault-worker/src/</code></li>
+      </ul>
+
+      <p>We believe privacy claims without transparency are worthless. Audit us.</p>
+
+      <div class="legal-nav">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="/">Back to Home</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="section-container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 Oracle The Journal. All rights reserved.</p>
+        <p class="footer-privacy-note">We collect zero personal data. <a href="privacy.html">Read our Privacy Policy.</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
