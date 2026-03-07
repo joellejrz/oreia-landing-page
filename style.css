@@ -263,6 +263,11 @@ body {
 .mobile-menu.open a:nth-child(2) { transition-delay: 0.1s; }
 .mobile-menu.open a:nth-child(3) { transition-delay: 0.15s; }
 .mobile-menu.open a:nth-child(4) { transition-delay: 0.2s; }
+.mobile-menu.open a:nth-child(5) { transition-delay: 0.25s; }
+
+.nav-active {
+  color: var(--text-primary) !important;
+}
 
 /* ============ BUTTONS ============ */
 
