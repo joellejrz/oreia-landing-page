@@ -58,11 +58,11 @@ function buildMetaTags({
   <meta property="og:description" content="${escapeHtml(description)}">
   <meta property="og:type" content="${type}">
   <meta property="og:url" content="${canonical}">
-  <meta property="og:image" content="${absoluteUrl('/assets/logo.png?v=3')}">
+  <meta property="og:image" content="${absoluteUrl('/assets/logo.png?v=4')}">
   <meta name="twitter:card" content="${twitterCard}">
   <meta name="twitter:title" content="${escapeHtml(title)}">
   <meta name="twitter:description" content="${escapeHtml(description)}">
-  <meta name="twitter:image" content="${absoluteUrl('/assets/logo.png?v=3')}">`;
+  <meta name="twitter:image" content="${absoluteUrl('/assets/logo.png?v=4')}">`;
 }
 
 function renderSchema(schema) {
@@ -111,7 +111,7 @@ function postTemplate(post, allPosts) {
       name: SITE_NAME,
       logo: {
         '@type': 'ImageObject',
-        url: absoluteUrl('/assets/logo.png?v=3'),
+        url: absoluteUrl('/assets/logo.png?v=4'),
       },
     },
     mainEntityOfPage: absoluteUrl(canonicalPath),
@@ -142,7 +142,7 @@ function postTemplate(post, allPosts) {
     pathname: canonicalPath,
     type: 'article',
   })}${renderSchema(articleSchema)}
-  <link rel="icon" href="/assets/logo.png?v=3" type="image/png">
+  <link rel="icon" href="/assets/logo.png?v=4" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -156,7 +156,7 @@ function postTemplate(post, allPosts) {
   <nav class="nav scrolled">
     <div class="nav-inner">
       <a href="/" class="nav-brand">
-        <img src="/assets/logo.png?v=3" alt="Oreia" class="nav-logo">
+        <img src="/assets/logo.png?v=4" alt="Oreia" class="nav-logo">
         <span class="nav-name">Oreia</span>
       </a>
       <div class="nav-links">
@@ -219,7 +219,7 @@ function postTemplate(post, allPosts) {
       ${relatedHTML}
 
       <div class="blog-cta-box">
-        <img src="/assets/logo.png?v=3" alt="" class="blog-cta-logo" aria-hidden="true">
+        <img src="/assets/logo.png?v=4" alt="" class="blog-cta-logo" aria-hidden="true">
         <h3>Ready to start your inner work?</h3>
         <p>Oreia combines CBT, Jungian archetypes, and local AI into a private journal that never leaves your device.</p>
         <a href="/download.html" class="btn btn-primary">
@@ -260,7 +260,7 @@ function indexTemplate(posts) {
       name: SITE_NAME,
       logo: {
         '@type': 'ImageObject',
-        url: absoluteUrl('/assets/logo.png?v=3'),
+        url: absoluteUrl('/assets/logo.png?v=4'),
       },
     },
   };
@@ -292,7 +292,7 @@ function indexTemplate(posts) {
     description,
     pathname: '/blog/',
   })}${renderSchema(blogSchema)}
-  <link rel="icon" href="/assets/logo.png?v=3" type="image/png">
+  <link rel="icon" href="/assets/logo.png?v=4" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -305,7 +305,7 @@ function indexTemplate(posts) {
   <nav class="nav scrolled">
     <div class="nav-inner">
       <a href="/" class="nav-brand">
-        <img src="/assets/logo.png?v=3" alt="Oreia" class="nav-logo">
+        <img src="/assets/logo.png?v=4" alt="Oreia" class="nav-logo">
         <span class="nav-name">Oreia</span>
       </a>
       <div class="nav-links">
