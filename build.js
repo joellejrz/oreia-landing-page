@@ -404,6 +404,7 @@ function generateSitemap(posts) {
     { loc: absoluteUrl('/privacy.html'), lastmod: new Date().toISOString() },
     { loc: absoluteUrl('/terms.html'), lastmod: new Date().toISOString() },
     { loc: absoluteUrl('/encryption.html'), lastmod: new Date().toISOString() },
+    { loc: absoluteUrl('/coming-soon.html'), lastmod: new Date().toISOString() },
   ];
 
   const postPages = posts.map((post) => ({
